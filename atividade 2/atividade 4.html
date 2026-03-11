@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<style>
+  body {
+    background: #e3eeff;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  button {
+    border-radius: 10px;
+    border-color: #e3eeff;
+    background-color: white;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+</style>
+
+<body>
+  <h1>Emprestimo de 1000 pila</h1>
+  <p>Quantidade de meses</p>
+  <input type="number" id="meses">
+  <input type="number" id="valorInicial" value="1000">
+  <br>
+  <br>
+  <button onclick="juros()">Calcular</button>
+</body>
+
+
+<script>
+
+  function juros() {
+    var meses = Number(document.getElementById("meses").value)
+    var valorInicial = Number(document.getElementById("valorInicial").value)
+    var juros = valorInicial * 0.05
+    var acumulados = 0
+    for (let i = 0; i < meses; i++) {
+      acumulados = acumulados + juros
+    }
+    valorInicial = valorInicial + acumulados
+    alert("O total de juros acumulados é " + acumulados)
+    alert("O valor total a ser pago é " + valorInicial)
+
+  }
+</script>
+
+</html>
