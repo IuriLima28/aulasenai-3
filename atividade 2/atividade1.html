@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title> Cálculo do valor total</title>
+  <style>
+    body {
+      background: #e3eeff;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    button {
+      border-radius: 10px;
+      border-color: #e3eeff;
+      background-color: white
+    }
+
+    input {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cálculo do valor total</h1>
+  <input type="number" placeholder="Qual a quantidade de produtos comprados?" id="input">
+  <br>
+  <button onclick="calcular()">Calcular</button>
+
+  <script>
+
+    function calcular() {
+      var PrecoCaderno = 12.50
+      var qtdCaderno = document.getElementById("input").value
+      alert("O preço total dos produtos é: " + PrecoCaderno * qtdCaderno + " reais")
+    }
+  </script>
+
+</body>
+
+</html>
