@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Calculador de Camisetas</h1>
+  <p>Preço de compra</p>
+  <input type="number" id="compra" value=25>
+  <p>Preço de venda</p>
+  <input type="number" id="venda" value=40>
+  <p>Numero de Camisetas Vendidas</p>
+  <input type="number" id="camisas">
+  <br>
+  <br>
+  <button onclick="lucro()">Calcular lucro</button>
+  <button onclick="vendas()">Calcular vendas total</button>
+
+  <div id=resposta></div>
+
+
+
+</body>
+
+<script>
+  const resposta = document.getElementById("resposta")
+  function lucro() {
+    var compra = document.getElementById("compra").value
+    var venda = document.getElementById("venda").value
+    var camisas = document.getElementById("camisas").value
+
+    var lucro = venda * camisas - compra * camisas
+    alert("O lucro foi de " + lucro)
+
+  }
+  function vendas() {
+    var venda = document.getElementById("venda").value
+    var camisas = document.getElementById("camisas").value
+
+    alert("O lucro foi de " + venda * camisas)
+
+  }
+</script>
+
+</html>
