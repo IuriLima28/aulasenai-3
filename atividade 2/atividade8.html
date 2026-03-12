@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aumento de preço de produto</title>
+    <style>
+            body {
+              background: #e3eeff;
+              font-family: "Times New Roman", Times, serif;
+            }
+          
+            button {
+              border-radius: 10px;
+              border-color: #e3eeff;
+              background-color: white;
+            }
+          
+            input {
+              border-radius: 10px;
+            }
+          </style>
+</head>
+<body>
+    <h1>Aumento de preço de produto</h1>
+    <input type="number" placeholder="Qual o preço atual do produto" id="PrecoAtual">
+    <button onclick="Calcular()">Calcular</button>
+
+    <script>
+        function Calcular() {
+            let PrecoAtual = Number(document.getElementById("PrecoAtual").value)
+            let aumento = PrecoAtual * 0.15
+            let PrecoFinal = PrecoAtual + aumento
+            
+            alert("O preço original é: " +PrecoAtual)
+            alert("O valor do aumento é: " +aumento)
+            alert("O valor do preço final é: " +PrecoFinal)
+        }
+    </script>
+</body>
+</html>
