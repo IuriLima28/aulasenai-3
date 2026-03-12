@@ -8,11 +8,50 @@
   <title>Document</title>
 </head>
 
-<body>
+<style>
+  body {
+    background: #e3eeff;
+    font-family: "Times New Roman", Times, serif;
+  }
 
+  button {
+    border-radius: 10px;
+    border-color: #e3eeff;
+    background-color: white;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+</style>
+
+<body>
+  <br>
+  <p id="displayTotais">Vendas totais na semana: </p>
+  <p id="displayMedia">Media de vendas semanais: </p>
+  <p id="displayMaior">Maior venda: </p>
+  <br>
+  <button onclick="start()">Começar programa</button>
 </body>
 
 <script>
+  function start() {
+    let vendas = []
+    let total = 0
+
+    for (let i = 1; i <= 7; i++) {
+      let x = Number(prompt("Digite as vendas do dia: " + i))
+      vendas.push(x)
+      total += x
+    }
+
+    let media = (total / 7).toFixed(2)
+    let alta = Math.max(...vendas)
+
+    displayTotais.textContent = "Vendas totais na semana: " + total
+    displayMedia.textContent = "Media de vendas semanais: " + media
+    displayMaior.textContent = "Maior venda: " + alta
+  }
 </script>
 
 </html>
