@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<style>
+  body {
+    background: #e3eeff;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  button {
+    border-radius: 10px;
+    border-color: #e3eeff;
+    background-color: white;
+  }
+
+  input {
+    border-radius: 10px;
+  }
+</style>
+
+
+<body>
+  <h2>Estoque atual: </h2>
+  <h3 id="estoque">120</h3>
+  <input placeholder="Quantidade de vendas" id="vendas">
+  <br>
+  <button onclick="calcular()">Diminuir</button>
+
+</body>
+
+<script>
+
+  let estoqueAtual = Number(document.getElementById("estoque").innerText)
+
+  function calcular() {
+    let vendas = Number(document.getElementById("vendas").value)
+    let estoqueInicial = estoqueAtual   // guarda o valor antes de diminuir
+
+    if (vendas > estoqueAtual) {
+      alert("Erro!")
+    }
+
+    else {
+      estoqueAtual = estoqueAtual - vendas
+
+      document.getElementById("estoque").innerText = estoqueAtual
+
+      alert("Estoque inicial: " + estoqueInicial)
+      alert("Quantidade vendida: " + vendas)
+      alert("Estoque atual: " + estoqueAtual)
+
+    }
+  }
+
+</script>
+
+</html>
