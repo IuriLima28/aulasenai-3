@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculador de Juros</title>
+  <style>
+    body {
+      background: #e3eeff;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    button {
+      border-radius: 10px;
+      border-color: #e3eeff;
+      background-color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    input {
+      border-radius: 10px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Calculador de Juros</h1>
+  <p>Investimento inicial</p>
+  <input placeholder="Investimento Inicial" type="number" id="investimento">
+  <br>
+  <p>Meses</p>
+  <input placeholder="Meses" type="number" id="tempo">
+  <br><br>
+  <button onclick="Calcular()">Calcular</button>
+
+  <p id="indexFinal">Valor final: </p>
+  <p id="indexJuros">Ganho de Juros: </p>
+
+  <script>
+    let indexFinal = document.getElementById("indexFinal")
+    let indexJuros = document.getElementById("indexJuros")
+
+    function Calcular() {
+      let valorInicial = Number(document.getElementById("investimento").value)
+      let tempo = Number(document.getElementById("tempo").value)
+
+      let valorFinal = valorInicial
+      let taxa = 0.02 // 2% ao mês
+
+      for (let i = 0; i < tempo; i++) {
+        valorFinal += valorInicial * taxa
+      }
+
+      let ganho = valorFinal - valorInicial
+
+      indexFinal.textContent = "Valor final: R$ " + valorFinal.toFixed(2)
+      indexJuros.textContent = "Ganho de Juros: R$ " + ganho.toFixed(2)
+    }
+  </script>
+</body>
+
+</html>
