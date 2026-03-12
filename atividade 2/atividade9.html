@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background: #e3eeff;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    button {
+      border-radius: 10px;
+      border-color: #e3eeff;
+      background-color: white
+    }
+
+    input {
+      border-radius: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <script>
+    function calcularParcelas() {
+
+      let total = parseFloat(document.getElementById('valorCompra').value);
+      let valorParcela = total / 5;
+
+      document.getElementById('resTotal').innerText = `Total da Compra: R$ ${total.toFixed(2)}`;
+      document.getElementById('resParcelas').innerText = `5x de R$ ${valorParcela.toFixed(2)}`;
+    }
+  </script>
+
+  <div class="card">
+    <h2>Simulador de Parcelas</h2>
+    <input type="number" id="valorCompra" placeholder="Valor total (R$)">
+    <button onclick="calcularParcelas()">Calcular</button>
+
+    <p id="resTotal">Total: R$ 0.00</p>
+    <p id="resParcelas">Parcelas: 5x de R$ 0.00</p>
+
+  </div>
+</body>
+
+</html>
