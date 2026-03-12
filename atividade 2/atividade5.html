@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Comissão de vendedor</title>
+    <style>
+            body {
+              background: #e3eeff;
+              font-family: "Times New Roman", Times, serif;
+            }
+          
+            button {
+              border-radius: 10px;
+              border-color: #e3eeff;
+              background-color: white;
+            }
+          
+            input {
+              border-radius: 10px;
+            }
+          </style>
+</head>
+<body>
+    <h1>Comissão de vendedor</h1>
+    <input type="number" placeholder="Qual é o salario do vendedor" id="salario">
+    <input type="number" placeholder=" Qual o valor total das vendas realizadas no mês" id="comissao">
+
+    <button onclick="Calcular()">Calcular</button>
+
+    <script>
+        function Calcular() {
+            let TotalMes = Number(document.getElementById("comissao").value)
+            let salario = Number(document.getElementById("salario").value)
+            let comissao = TotalMes * 0.05
+            let calculo = salario + comissao
+
+            alert("O valor total de vendas no mês é: " + TotalMes)
+            alert("O valor da comissao do funcionario é: " +comissao)
+            alert("o salario junto com a comissão é: " +calculo)
+        }
+    </script>
+</body>
+</html>
